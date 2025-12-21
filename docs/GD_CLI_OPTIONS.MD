@@ -1,4 +1,4 @@
-# Short Tutorial: `gd::cli::options` – Command-Line Interface Parser
+# Overview: `gd::cli::options` – Command-Line Interface Parser
 
 `gd::cli::options` is a **comprehensive command-line interface (CLI) parsing library** that allows developers to define, parse, and retrieve command-line arguments in a structured way.
 

@@ -1,4 +1,4 @@
-### Short Tutorial: `gd::variant` – A Flexible, Type-Safe Runtime Value Holder
+### Overview: `gd::variant` – A Flexible, Type-Safe Runtime Value Holder
 
 The `gd::variant` class is a powerful, lightweight C++ variant type designed to store **any primitive value** (numbers, bool, pointers) or **common dynamic types** (strings, binary data, GUIDs) in a single object, while owning its data and managing memory automatically.
 
@@ -8,7 +8,7 @@ It's similar in spirit to `std::variant` but more practical for real-world use: 
 - Stores one value of many types (int, double, string, binary, etc.)
 - Automatically manages heap allocation for large/string data
 - Rich type inspection (`is_int()`, `type_name()`, etc.)
-- Safe retrieval and conversion (`as<T>()`, `get_string()`, `convert()`)
+- Safe retrieval and conversion (`as<T>()`, `as_string()`, `convert()`)
 - Supports arithmetic, comparison, and assignment for compatible types
 - Copy/move semantics with proper deep copying
 
@@ -36,7 +36,7 @@ int main() {
     bool        b = v4.as<bool>();        // true
 
     // Or classic getters
-    std::string text = v3.get_string();    // same as above
+    std::string text = v3.as_string();    // same as above
 
     // Arithmetic (only on numeric types)
     variant sum = v1 + 100;                // variant(142)
@@ -70,7 +70,7 @@ Use the third `bool` parameter or tag types (`tag_no_allocate`, `tag_raw`) to cr
 
 ```cpp
 if (v.is_int())     { int i = v.as<int>(); }
-if (v.is_string())  { std::string s = v.get_string(); }
+if (v.is_string())  { std::string s = v.as_string(); }
 if (v.is_null())    { /* empty/unknown */ }
 
 std::cout << v.type_name(); // human-readable: "string", "int64", "binary", etc.
