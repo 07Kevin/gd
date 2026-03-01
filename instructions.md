@@ -226,20 +226,5 @@ There are also a @PROJECT and @TASK connection. It works like this:
 
 ## Project Structure
 
-```
-external/gd/          # GD (General Development) library — the primary shared library and very important for code reuse across targets!!
-external/catch2/      # Test framework
-external/pugixml/     # XML
-external/sqlite/      # SQLite
-external/boost/       # Boost safe_numerics(used sparingly, only used for regex and not important)
-external/jsoncons/    # JSON
-source/application/   # Reusable application-level code (ApplicationBasic, database metadata)
-cmake/                # CMake helper scripts (include_external.cmake)
-target/TOOLS/FileCleaner/  # "cleaner" CLI tool — file organization/searching
-target/TOOLS/Backup/       # Backup tool
-target/server/http/        # HTTP server
-misc/howto/                # HOWTO example executables
-test/                      # General gd library tests but most targets will have their own tests is subdirectories of test/
-```
 
 All projects have their own subfolder called playground, here it is ok to test and play around with code. This is the place where you can write code that is not yet ready to be moved.
